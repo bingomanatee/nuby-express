@@ -38,6 +38,7 @@ module.exports = {
         request('http://localhost:3000/bar', function(err, response, body){
             test.equals(body, '<h1>Page</h1><p>body</p>', 'bar body');
             test.done();
+            fw.app.close();
         });
     }
 
