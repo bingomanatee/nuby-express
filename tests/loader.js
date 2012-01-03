@@ -11,7 +11,7 @@ module.exports = {
     setup:function (test) {
         framework = new Framework(path.resolve('./test_resources/loader_app'));
 
-        test.equals(0, framework.controllers.length, 'framework has no controllers');
+        test.equals(0, framework.controllers.length, 'framework has zero controllers');
 
         loader = new Loader();
         test.done();
