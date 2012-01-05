@@ -17,7 +17,7 @@ module.exports = {
         loader = new Loader();
 
         function _on_loaded_cb() {
-            fw.app.listen(3000);
+            fw.app.listen(3005);
             test.done();
         }
 
@@ -25,18 +25,9 @@ module.exports = {
         loader.load(fw, _on_loaded_cb);
     },
 
-    test_loader:function (test) {
-
-        request('http://localhost:3000', function (error, response, body) {
-            test.equals(body, '<html><body>Welcome to Test Site</body></html>', 'body response');
-            test.done();
-        });
-
-    },
-
-    test_view: function (test){
-        request('http://localhost:3000/bar', function(err, response, body){
-            test.equals(body, '<h1>Page</h1><p>body</p>', 'bar body');
+    test_req_param: function (test) {
+        request('http://localhost:3005/basic/pt1/2', function(err, response, body){
+            test.equals(body, '<html><body>2</body></html>', 'pt2 body');
             test.done();
             fw.app.close();
         });
