@@ -43,7 +43,8 @@ module.exports = {
                                 json:lassie},
 
                             function (err, response, body) {
-                                console.log('response to lassie post: %s', util.inspect(response, null, 1));
+                                lassie.id = '51';
+                              //  console.log('response to lassie post: %s', util.inspect(response, null, 1));
                                 test.deepEqual(lassie, body, 'lassie is 51');
                                 test.done();
                                 fw.app.close();
