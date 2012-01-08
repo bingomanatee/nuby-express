@@ -1,21 +1,18 @@
 var util = require('util');
-var Loader = require('./../lib/loader');
-var Framework = require('./../lib/framework');
+var nuby_express = require('./../lib');
 var path = require('path');
 var fs = require('fs');
 var request = require('./../node_modules/request');
-
 var loader;
 var fw;
 
 module.exports = {
     setup:function (test) {
-        fw = new Framework(path.resolve('./test_resources/flasher_app'));
+        fw = new nuby_express.Framework(path.resolve('./test_resources/flasher_app'));
 
-        loader = new Loader();
+        loader = new nuby_express.Loader();
 
         function _on_loaded_cb() {
-            console.log('flasher setup loaded');
             fw.app.listen(3010);
             test.done();
         }
