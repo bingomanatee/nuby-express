@@ -8,6 +8,12 @@ app.set('view options', {layout: false});
 
 module.exports = {
 
-    app: app
+    app: app,
+
+    on_404: function(req, res){
+
+        res.send('Not Found', 404);
+
+    }
 
 }
