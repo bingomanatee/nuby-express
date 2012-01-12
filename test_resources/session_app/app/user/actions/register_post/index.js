@@ -10,7 +10,7 @@ module.exports = {
 
     execute: function(req_state, callback){
         var self = this;
-        req_state.get_params(['username', 'password'], function(values){
+        req_state.get_params(['username', 'password'], function(err, values){
 
             if (values.username && values.password){
                 self.new_user(values); // ignoring dupes for now
