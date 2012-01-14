@@ -35,7 +35,7 @@ module.exports = {
                         json:new_dog},
 
                     function (err, response, body) {
-                        //     console.log('put out body: %s (%s)', util.inspect(body), typeof body);
+                     //  console.log('put out body: %s (%s)', util.inspect(body), typeof body);
                         test.deepEqual({name:'Benji', gender:'M', id:'50'}, body, 'benji is 50');
                         var lassie = {name:'Lassie', gender:'F'};
 

@@ -17,21 +17,23 @@ module.exports = {
         loader = new Loader();
 
         function _on_loaded_cb() {
-            fw.app.listen(3002);
-            test.done();
+                loader.set_404(fw);
+            fw.app.listen(3022);
+            process.nextTick(function(){
+                            test.done();
+            })
         }
 
-        loader.set_404(fw);
 
         loader.load(fw, _on_loaded_cb);
     },
 
     test_loader:function (test) {
 
-        request('http://localhost:3002', function (error, response, body) {
+        request('http://localhost:3022', function (error, response, body) {
             test.equals(body, '<html><body>Welcome to Test Site</body></html>', 'body response');
 
-            request('http://localhost:3002/no_page_here', function (err, response, body) {
+            request('http://localhost:3022/no_page_here', function (err, response, body) {
                // console.log('response: %s', util.inspect(response));
                 test.equals(response.statusCode, 404, 'no page here has 404 code');
                 test.equals(body, '<html><body>Page Not Found</p></body></html>', 'no page here has not found body');
