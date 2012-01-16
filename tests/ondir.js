@@ -33,7 +33,7 @@ module.exports = {
         var MADE_UP_PATH = 'madeuppath';
 
         var on_no_path = function(p, callback){
-            test.equals(MADE_UP_PATH, MADE_UP_PATH, util.format("there is no path %s", MADE_UP_PATH));
+            test.equals(MADE_UP_PATH, MADE_UP_PATH, util.format("ondir::there is no path %s", MADE_UP_PATH));
             callback();
         }
         ondir(MADE_UP_PATH, function(){
