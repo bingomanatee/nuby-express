@@ -1,23 +1,26 @@
 var util = require('util');
-var File_Loader = require('./../lib/File_Loader');
 var path = require('path');
 var fs = require('fs');
 var events = require('events');
+
 var _ = require('underscore');
-var path = require('path');
+var File_Loader = require('./../lib/File_Loader');
+var Dir_Loader = require('./../lib/Dir_Loader');
 
 var file_loader;
 
-var file_paths = [
-    '/test_resources/Loader_test/.ignore_me.txt',
-    '/test_resources/Loader_test/a',
-    '/test_resources/Loader_test/b',
-    '/test_resources/Loader_test/bar.txt',
-    '/test_resources/Loader_test/foo.txt',
-    '/test_resources/Loader_test/a/bar.txt',
-    '/test_resources/Loader_test/b/bar.txt',
-    '/test_resources/Loader_test/b/foo.txt'
-];
+var file_paths = [ '/test_resources/Loader_test/.b',
+  '/test_resources/Loader_test/.b/.bar.txt',
+  '/test_resources/Loader_test/.b/bar.txt',
+  '/test_resources/Loader_test/.b/foo.txt',
+  '/test_resources/Loader_test/.ignore_me.txt',
+  '/test_resources/Loader_test/a',
+  '/test_resources/Loader_test/a/bar.txt',
+  '/test_resources/Loader_test/b',
+  '/test_resources/Loader_test/b/bar.txt',
+  '/test_resources/Loader_test/b/foo.txt',
+  '/test_resources/Loader_test/bar.txt',
+  '/test_resources/Loader_test/foo.txt' ];
 var i_file_paths = [
     '/test_resources/Loader_test/a',
     '/test_resources/Loader_test/b',
