@@ -6,4 +6,6 @@ The "Event" branch is devoted to three things:
 4) getting rid of callback-style properties
 5) putting frameworks, models and resources into the require system.
 
-sdas
+## TESTING
+
+This module is validated via nodeunit. run nodeunit tests from the root nuby-express folder to run tests.
