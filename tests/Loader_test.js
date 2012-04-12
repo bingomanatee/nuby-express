@@ -9,19 +9,22 @@ var Dir_Loader = require('./../lib/Dir_Loader');
 
 var file_loader;
 
-var file_paths = [ '/test_resources/Loader_test/.b',
-  '/test_resources/Loader_test/.b/.bar.txt',
-  '/test_resources/Loader_test/.b/bar.txt',
-  '/test_resources/Loader_test/.b/foo.txt',
-  '/test_resources/Loader_test/.ignore_me.txt',
-  '/test_resources/Loader_test/a',
-  '/test_resources/Loader_test/a/bar.txt',
-  '/test_resources/Loader_test/b',
-  '/test_resources/Loader_test/b/bar.txt',
-  '/test_resources/Loader_test/b/foo.txt',
-  '/test_resources/Loader_test/bar.txt',
-  '/test_resources/Loader_test/foo.txt' ];
+var file_paths = [
+    '/test_resources/Loader_test',
+    '/test_resources/Loader_test/.b',
+    '/test_resources/Loader_test/.b/.bar.txt',
+    '/test_resources/Loader_test/.b/bar.txt',
+    '/test_resources/Loader_test/.b/foo.txt',
+    '/test_resources/Loader_test/.ignore_me.txt',
+    '/test_resources/Loader_test/a',
+    '/test_resources/Loader_test/a/bar.txt',
+    '/test_resources/Loader_test/b',
+    '/test_resources/Loader_test/b/bar.txt',
+    '/test_resources/Loader_test/b/foo.txt',
+    '/test_resources/Loader_test/bar.txt',
+    '/test_resources/Loader_test/foo.txt' ];
 var i_file_paths = [
+    '/test_resources/Loader_test',
     '/test_resources/Loader_test/a',
     '/test_resources/Loader_test/b',
     '/test_resources/Loader_test/bar.txt',
@@ -69,41 +72,11 @@ module.exports = {
         }, load_resources_path);
     },
 
-    /**
-     * Tests the reusabiity of a loader. As long as you clear the cache between
-     * loads, you should be able to run multiple times without increasing the
-     * number of event handlers in your loader.
-     *
-     * @param test
-     */
-    test_loader_run_twice:function (test) {
-        var file_loader2 = new File_Loader();
+    test_loader_ignore:function (test) {
 
-        file_loader2.start_load(function () {
-            test.equal(file_loader2._item_count, 0, 'Item count is zero');
-            var files = _sort_files(file_loader2.paths);
-            test.deepEqual(files, all_files, 'found all files');
-            if (!file_loader2.run_once) {
-                file_loader2.run_once = true;
-                file_loader2.paths = [];
-                file_loader2.start_load(load_resources_path);
-            } else {
-                test.done();
-            }
-        }, load_resources_path);
-    },
-
-    test_loader_ignore: function(test){
+        console.log(' -------------- DONT READ DOTS -----------');
         var file_loader3 = new File_Loader();
-        var _original_can_load = file_loader3.can_load;
-        file_loader3.can_load = function(load_path){
-            if (/\/\.[^\/]+$/.test(load_path)){
-                console.log('ignoring %s', load_path);
-                return false;
-            } else {
-                return _original_can_load(load_path);
-            }
-        }
+        file_loader3.read_dots = false;
 
         file_loader3.start_load(function () {
             test.equal(file_loader3._item_count, 0, 'Item count is zero');
