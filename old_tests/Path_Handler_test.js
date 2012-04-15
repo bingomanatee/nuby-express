@@ -1,5 +1,5 @@
-var Path_Handler = require('./../lib/Loader/Path_Handler');
-var Loader = require('./../lib/Loader');
+var Path_Handler = require('../lib/Loader/Path_Handler.js');
+var Loader = require('../lib/Loader');
 var mock_loader;
 
 var json_files = [];
@@ -36,12 +36,12 @@ module.exports = {
             ],
 
             emit:function (what, msg) {
-                console.log("MOCK EMIT %s - %s", what, msg);
+                //console.log("MOCK EMIT %s - %s", what, msg);
             },
 
             work_done_callback: function(){
                 return function(msg){
-                    console.log('MOCK WORK DONE CALLBACK %s', msg);
+                  //  console.log('MOCK WORK DONE CALLBACK %s', msg);
                 }
             }
 

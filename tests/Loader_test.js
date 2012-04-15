@@ -4,13 +4,12 @@ var fs = require('fs');
 var events = require('events');
 
 var _ = require('underscore');
-var File_Loader = require('./../lib/File_Loader');
-var Dir_Loader = require('./../lib/Dir_Loader');
+var File_Loader = require('../lib/File_Loader');
+var Dir_Loader = require('../lib/Dir_loader');
 
 var file_loader;
 
 var file_paths = [
-    '/test_resources/Loader_test',
     '/test_resources/Loader_test/.b',
     '/test_resources/Loader_test/.b/.bar.txt',
     '/test_resources/Loader_test/.b/bar.txt',
@@ -24,7 +23,6 @@ var file_paths = [
     '/test_resources/Loader_test/bar.txt',
     '/test_resources/Loader_test/foo.txt' ];
 var i_file_paths = [
-    '/test_resources/Loader_test',
     '/test_resources/Loader_test/a',
     '/test_resources/Loader_test/b',
     '/test_resources/Loader_test/bar.txt',
@@ -64,6 +62,7 @@ module.exports = {
      * @param test
      */
     test_loader:function (test) {
+        console.log('-------- TEST LOADER ---------')
         file_loader.start_load(function () {
             test.equal(file_loader._item_count, 0, 'Item count is zero');
             var files = _sort_files(file_loader.paths);
@@ -74,7 +73,7 @@ module.exports = {
 
     test_loader_ignore:function (test) {
 
-        console.log(' -------------- DONT READ DOTS -----------');
+       console.log(' -------------- TEST LOADER IGNORE -----------');
         var file_loader3 = new File_Loader();
         file_loader3.read_dots = false;
 
