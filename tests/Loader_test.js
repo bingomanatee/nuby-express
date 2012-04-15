@@ -62,7 +62,7 @@ module.exports = {
      * @param test
      */
     test_loader:function (test) {
-        console.log('-------- TEST LOADER ---------')
+     //   console.log('-------- TEST LOADER ---------')
         file_loader.start_load(function () {
             test.equal(file_loader._item_count, 0, 'Item count is zero');
             var files = _sort_files(file_loader.paths);
@@ -73,7 +73,7 @@ module.exports = {
 
     test_loader_ignore:function (test) {
 
-       console.log(' -------------- TEST LOADER IGNORE -----------');
+   //    console.log(' -------------- TEST LOADER IGNORE -----------');
         var file_loader3 = new File_Loader();
         file_loader3.read_dots = false;
 
