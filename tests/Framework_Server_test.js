@@ -14,6 +14,10 @@ function _ss(a) {
     });
 }
 
+function _1(a){
+    return _.map(a, function(aa){ return aa[0]});
+}
+
 module.exports = {
     setup: function(test){
         framework = new Framework({path: app_path});
@@ -22,6 +26,7 @@ module.exports = {
         'action <<action>>foo added route /bar/alpha/foo']);
 
         framework.start_load(function(){
+            console.log('FS setup done');
             test.done();
         }, app_path);
     },
@@ -29,7 +34,7 @@ module.exports = {
     test_server_load: function(test){
         framework.start_server(function(){
             console.log('server started: log = %s', framework._log.join("\n"));
-            test.deepEqual(fw_log_msgs, _ss(framework._log), 'all actions logged');
+            test.deepEqual(fw_log_msgs, _ss(_1(framework._log)), 'all actions logged');
             test.done();
         })
     }

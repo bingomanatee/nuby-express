@@ -28,23 +28,37 @@ var controller_loader_actions;
 var fr_con_her;
 module.exports = {
     setup:function (test) {
-        framework_com_con = _ss([ '<<controller>>alpha', '<<controller>>beta', '<<controller>>gamma',
-            '<<controller>>alpha2', '<<controller>>beta2' ]);
+        framework_com_con = _ss([
+            '<<controller>>alpha',
+            '<<controller>>beta',
+            '<<controller>>gamma',
+            '<<controller>>alpha2',
+            '<<controller>>beta2'
+        ]);
         framework_con_direct = _ss(['<<controller>>direct']);
         framework_con_all = _ss(framework_com_con.concat(framework_con_direct));
-        com_controllers = _ss([ '<<controller>>alpha', '<<controller>>beta', '<<controller>>gamma' ]);
+        com_controllers = _ss([
+            '<<controller>>alpha',
+            '<<controller>>beta',
+            '<<controller>>gamma'
+        ]);
         controller_actions = _ss(['<<action>>bar', '<<action>>foo']);
-        controller_loader_actions = _ss(['<<controller>>alpha:<<action>>bar','<<controller>>alpha:<<action>>foo']);
-        fr_con_her = _ss([ 'app:<<component>>bar:<<controller>>alpha',
-          'app:<<component>>bar:<<controller>>beta',
-          'app:<<component>>bar:<<controller>>gamma',
-          'app:<<component>>foo:<<controller>>alpha2',
-          'app:<<component>>foo:<<controller>>beta2',
-          'app:<<controller>>direct' ]);
+        controller_loader_actions = _ss([
+            '<<controller>>alpha:<<action>>bar',
+            '<<controller>>alpha:<<action>>foo'
+        ]);
+        fr_con_her = _ss([
+            '<<framework>>app:<<component>>bar:<<controller>>alpha',
+            '<<framework>>app:<<component>>bar:<<controller>>beta',
+            '<<framework>>app:<<component>>bar:<<controller>>gamma',
+            '<<framework>>app:<<component>>foo:<<controller>>alpha2',
+            '<<framework>>app:<<component>>foo:<<controller>>beta2',
+            '<<framework>>app:<<controller>>direct'
+        ]);
 
         component = new Component({path:component_path});
         controller = new Controller({path:controller_path});
-
+        console.log('CCT setup done');
         test.done();
     },
 
@@ -88,7 +102,7 @@ module.exports = {
             test.deepEqual(framework_con_all,
                 _ss(fr.controller_names(true)), 'ALL controllers found');
             test.deepEqual(fr_con_her,
-            _ss(fr.controller_heritage(true)), 'framework controller heritage');
+                _ss(fr.controller_heritage(true)), 'framework controller heritage');
 
             test.done();
 

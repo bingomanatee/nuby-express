@@ -52,6 +52,7 @@ var i_all_files = _sort_files(_.map(i_file_paths, _make_file));
 module.exports = {
     setup:function (test) {
         file_loader = new File_Loader();
+        console.log('L setup done');
         test.done();
     },
 

@@ -1,1 +1,1 @@
-{ "route": "/bar/alpha/bar" }
+{ "route": "/bar/alpha/bar", "method": "POST" }
