@@ -40,6 +40,7 @@ module.exports = {
             })
 
             test.deepEqual(framework.alpha, 'abc'.split(''), 'framework has alpha after start_server');
+            test.deepEqual(framework.def, 'def'.split(''), 'framework has def after start_server');
             var hn = handler_names(framework);
             console.log('handlers: [%s]', hn.join(','));
             test.ok(_.contains(hn, 'logger', 'framework server has logger'));

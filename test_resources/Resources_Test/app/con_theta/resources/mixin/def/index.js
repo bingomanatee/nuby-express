@@ -1,4 +1,5 @@
 var Resource = require('./../../../../../../../lib/Resource');
+
 var util = require('util');
 var _ = require('underscore');
 
@@ -11,8 +12,8 @@ _.extend(Reactor.prototype, {
     _name: 'resource_react',
     type: 'mixin',
     apply: function(target, cb){
-        console.log('adding alpha');
-        target.alpha = 'abc'.split('');
+        console.log('adding def');
+        target.def = 'def'.split('');
         cb();
     }
 });
