@@ -1,0 +1,6 @@
+{"route": "/foo/bar/:id?",
+    "default_req_props": {
+        "id" : -1,
+        "n": 3
+    },
+"template": "Default"}

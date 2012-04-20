@@ -93,7 +93,7 @@ module.exports = {
         fr.start_load(function () {
 
             test.equal(fr._item_count, 0, 'Item count is zero');
-            test.deepEqual({ framework_foo:1, framework_bar:2 }, fr.config,
+            test.deepEqual({port: 80, framework_foo:1, framework_bar:2 }, fr.config,
                 util.format('loading framework configuration of framework %s', fr.path));
             test.deepEqual(framework_com_con,
                 _ss(fr.com_controller_names()), 'component controllers found');
