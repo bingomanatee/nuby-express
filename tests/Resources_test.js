@@ -23,7 +23,7 @@ module.exports = {
 
         framework.start_load(function(){
 
-            console.log('RT setup done');
+           // console.log('RT setup done');
             test.done();
         }, app_path);
     },
@@ -35,14 +35,14 @@ module.exports = {
         });
 
         framework.start_server(function(){
-            framework.log_report().forEach(function(lr){
-                console.log(lr[0]);
+           framework.log_report().forEach(function(lr){
+             //   console.log(lr[0]);
             })
 
             test.deepEqual(framework.alpha, 'abc'.split(''), 'framework has alpha after start_server');
             test.deepEqual(framework.def, 'def'.split(''), 'framework has def after start_server');
             var hn = handler_names(framework);
-            console.log('handlers: [%s]', hn.join(','));
+          //  console.log('handlers: [%s]', hn.join(','));
             test.ok(_.contains(hn, 'logger', 'framework server has logger'));
             test.done();
         })

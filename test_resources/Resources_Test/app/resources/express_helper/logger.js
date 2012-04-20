@@ -12,7 +12,7 @@ _.extend(Express_Logger.prototype, {
     type: 'express_helper',
 
     apply: function(server, target, cb){
-        console.log('applying loggeg');
+       // console.log('applying loggeg');
         server.use(this.logger);
         cb();
     }

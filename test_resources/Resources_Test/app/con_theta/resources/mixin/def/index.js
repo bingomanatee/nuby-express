@@ -12,7 +12,7 @@ _.extend(Reactor.prototype, {
     _name: 'resource_react',
     type: 'mixin',
     apply: function(target, cb){
-        console.log('adding def');
+     //   console.log('adding def');
         target.def = 'def'.split('');
         cb();
     }
