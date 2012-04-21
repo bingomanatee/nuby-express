@@ -22,8 +22,8 @@ module.exports = {
     setup: function(test){
         framework = new Framework({path: app_path});
 
-        fw_log_msgs = _ss(['action <<action>>bar added route /bar/alpha/bar',
-        'action <<action>>foo added route /bar/alpha/foo']);
+        fw_log_msgs = _ss(['action bar added route /bar/alpha/bar',
+        'action foo added route /bar/alpha/foo']);
 
         framework.start_load(function(){
         //    console.log('FS setup done');
