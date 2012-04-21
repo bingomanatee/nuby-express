@@ -38,9 +38,6 @@ module.exports = {
         });
 
         framework.start_server(function () {
-            framework.log_report().forEach(function (lr) {
-                //   console.log(lr[0]);
-            })
 
             test.deepEqual(framework.alpha, 'abc'.split(''), 'framework has alpha after start_server');
             test.deepEqual(framework.def, 'def'.split(''), 'framework has def after start_server');
