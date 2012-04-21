@@ -9,6 +9,7 @@ var path = require('path');
 var framework;
 
 var app_path = path.resolve(__dirname + '/../test_resources/Server_Action_test/app');
+var root = 'http://localhost:3333/';
 
 function _ss(a) {
     return _.sortBy(a, function (i) {
@@ -54,7 +55,7 @@ module.exports = {
     },
 
     test_post_response:function (test) {
-        request({uri:'http://localhost:3333/foo/bar', method: 'POST', form:{n:1000, notes:"obrien home"}},
+        request({uri:'http://localhost:3333/foo/bar', method:'POST', form:{n:1000, notes:"obrien home"}},
             function (err, res, body) {
                 test.equal(body, '<html><body>id:1,n:1000,notes:obrien home</body></html>', 'parameter passing');
                 test.done();
@@ -62,8 +63,15 @@ module.exports = {
         )
     },
 
+    test_default_route:function (test) {
+        request.get(root + 'foo/foo', function (er, re, body) {
+            test.equal(body, '<html><body>foo</body></html>', 'testing default route');
+            test.done();
+        });
+    },
+
     test_home_response:function (test) {
-        request('http://localhost:3333/', function (err, response, body) {
+        request(root, function (err, response, body) {
             if (err) {
                 throw err;
             }
