@@ -107,8 +107,8 @@ module.exports = {
                 throw err;
             }
             test.equal(body, fs.readFileSync(app_path + '/controller_home/actions/home/home_view.html').toString(), 'returning view');
-            console.log('FRAMEWORK SERVER: %s', util.inspect(framework.server(), true, 1));
-            framework.server().close();
+           // console.log('FRAMEWORK SERVER: %s', util.inspect(framework.server(), true, 1));
+           // framework.server().close();
             mongoose.connection.close();
             test.done();
         })

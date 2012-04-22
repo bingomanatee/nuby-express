@@ -58,7 +58,7 @@ module.exports = {
                 } catch (err){
                     test.ok(false, 'cannot parse ' + body);
                 }
-                framework.server().close();
+           //     framework.server().close();
                 test.done();
 
             });

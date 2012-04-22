@@ -76,7 +76,7 @@ module.exports = {
                 throw err;
             }
             test.equal(body, fs.readFileSync(app_path + '/controller_home/actions/home/home_view.html').toString(), 'returning view');
-            framework.server().close();
+           //framework.server().close();
             test.done();
 
         })
