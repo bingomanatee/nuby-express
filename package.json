@@ -1,6 +1,6 @@
 {
   "name": "nuby-express",
-  "version": "2.0.0",
+  "version": "2.0.5",
   "main": "index",
   "description": "A web framework based on Express, Ruby, MVC.",
   "keywords": [
@@ -21,7 +21,7 @@
     "node": ">=0.6.0"
   },
   "dependencies": {
-      "ejs": "~3.0.0",
+      "express": "3.0.0alpha1",
       "mongoose": "~2.6.0",
       "request": "~2.9.202",
       "underscore": ">=1.2.3",
