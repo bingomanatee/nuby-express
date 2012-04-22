@@ -8,7 +8,7 @@ module.exports = {
         server.set('view options', {
           layout: false
         });
-        server.register('.html', ejs);
+        server.engine('.html', require('ejs').__express);
         cb();
     }
 }
