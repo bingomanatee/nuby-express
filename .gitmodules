@@ -1,3 +1,0 @@
-[submodule "node_modules/node-support"]
-	path = node_modules/node-support
-	url = git@github.com:bingomanatee/node-support.git
