@@ -1,11 +1,15 @@
-The "Event" branch is devoted to three things:
+Nüby-Express is an attempt to create a framework for larger, scalable event projects. Like Ruby it is based strongly on
+convention, with a strong pattern of pathing for its resources, and a lot of support for common repeated patterns.
 
-1) returning nuby-express to a test validtated framework
-2) creating a set of self-loading components as opposed to a top-down loading module.
-3) erasing the schism between rest and non rest controllers
-4) getting rid of callback-style properties
-5) putting frameworks, models and resources into the require system.
+Unlike Ruby it is not tied to complex activeRecords, or for that matter, any pattern of model interaction.
 
-## TESTING
+Some of the specific advanatages of Nüby include:
 
-This module is validated via nodeunit. run nodeunit tests from the root nuby-express folder to run tests.
+  * A strong middleware pattern that lets you focus on business concerns.
+  * The ability to create reusable components for common tasks.
+  * A strong focus on action-centric coding over long sprawling contorllers
+  * A flexible project heirarchy of resources that allow for simple, short projets as well as large multi-tiered ones.
+
+Nüby-Express uses Express at the core to manage HTTP I/O but its own unique sets of resouces and MVC based project organization.
+
+See the Wiki for more specific details, and the test cases (via nodeunit) for many working examples.
