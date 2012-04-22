@@ -1,4 +1,4 @@
-var Mongoose_Model = require("node-support/mongoose_model");
+var Mongoose_Model = require("support/mongoose_model");
 var NE = require('./../../../../../lib');
 var util = require('util');
 var _ = require('underscore');

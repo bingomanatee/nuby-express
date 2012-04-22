@@ -1,4 +1,4 @@
-var Simple_Model = require("node-support/simple_model");
+var Simple_Model = require("support/simple_model");
 var NE = require('./../../../../../lib');
 var util = require('util');
 var _ = require('underscore');
