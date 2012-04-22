@@ -81,22 +81,24 @@ module.exports = {
         if (!id) {
             return this.rest_err(rs, 'cannot put to id %s', id);
         }
-
+        console.log('put_validate: %s', id);
+        var self = this;
         this.models.folks.count({_id:id}, function (err, num) {
+            console.log('count: %s', num);
             if (err) {
-                return this.rest_err(rs, err);
+                return self.rest_err(rs, err);
             } else {
                 switch (num) {
                     case 0:
-                        return this.rest_err(rs, 'cannot put to id %s - record not found', id);
+                        return self.rest_err(rs, 'cannot put to id %s - record not found', id);
                         break;
 
                     case 1:
-                        return this.put_process(rs, {id:id});
+                        return self.put_process(rs, {id:id});
                         break;
 
                     default:
-                    //@TODO: err!
+                        return self.rest_err(rs, 'cannot put to id %s - too many records found', id);
                 }
             }
         });

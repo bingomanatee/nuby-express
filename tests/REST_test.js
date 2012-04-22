@@ -55,38 +55,47 @@ module.exports = {
     test_prop_response:function (test) {
         request.post({uri:root + 'folks', form:Roger },
             function (err, res, put_body) {
-                var Roger_JSON = JSON.parse(put_body);
-                test.ok(Roger_JSON._id, 'return json has ID');
-                var id = Roger_JSON._id;
-                delete Roger_JSON._id;
-                test.deepEqual(Roger, Roger_JSON, 'Rogering');
+                try {
+                 //   console.log('put body: %s', put_body);
+                    var Roger_JSON = JSON.parse(put_body);
+                    test.ok(Roger_JSON._id, 'return json has ID');
+                    var id = Roger_JSON._id;
+                    delete Roger_JSON._id;
+                    test.deepEqual(Roger, Roger_JSON, 'Rogering');
 
-                /* *********** RETRIEVE ROGER **************** */
+                    /* *********** RETRIEVE ROGER **************** */
 
-                process.nextTick(function(){
-                    request.get(root + 'folks/' + id, function(err, rest, get_body){
-                        test.equal(put_body, get_body, 'Can retrieve Roger');
+                    process.nextTick(function () {
+                        request.get(root + 'folks/' + id, function (err, rest, get_body) {
+                          //  console.log('get_body: %s', get_body);
+                            test.equal(put_body, get_body, 'Can retrieve Roger');
 
-                        /* *********** CALL HIM ROD ************** */
+                            /* *********** CALL HIM ROD ************** */
 
-                        request.post({uri: root + 'folks/' + id, form: {name: "Rod"}}, function(err, r, updated_body){
+                            request.put({uri:root + 'folks/' + id, form:{name:"Rod"}}, function (err, r, updated_body) {
+                            //    console.log('updated_body: %s', updated_body);
 
-                            var altered_rod = JSON.parse(updated_body);
-                            test.equal(altered_rod.name, 'Rod', 'name is Rod');
-                            test.equal(altered_rod.noted, Roger.notes, 'same old notes');
-                            test.done();
+                                var altered_rod = JSON.parse(updated_body);
+                                test.equal(altered_rod.name, 'Rod', 'name is Rod');
+                                test.equal(altered_rod.notes, Roger.notes, 'same old notes');
+                                test.done();
 
-                        })
+                            })
 
-                    });
+                        });
 
-                })
+                    })
 
+                } catch (err) {
+                    console.log(err.toString());
+                }
             });
+
     },
 
     test_done_response:function (test) {
         framework.server().close();
+        mongoose.connection.close();
         test.done();
     }
 }
