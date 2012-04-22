@@ -1,28 +1,29 @@
 {
-   "name": "nüby-express",
-   "version": "2.0.0",
-   "main": "index",
-   "description": "A web framework based on Express, Ruby, MVC.",
-   "keywords": [
-       "web",
-       "framework",
-       "express"
-   ],
-   "author": {
-       "name": "Peteris Krumins",
-       "email": "peteris.krumins@gmail.com",
-       "web": "http://www.catonmat.net",
-       "twitter": "pkrumins"
-   },
-   "license": "MIT",
-   "repository": {
-       "type": "git",
-       "url": "git@github.com:bingomanatee/nuby-express.git"
-   },
-   "directories": {
-       "tests": "tests"
-   },
-   "engines": {
-       "node": ">=0.6.0"
-   }
+  "name": "nuby-express",
+  "version": "2.0.0",
+  "main": "index",
+  "description": "A web framework based on Express, Ruby, MVC.",
+  "keywords": [
+    "web",
+    "framework",
+    "express"
+  ],
+  "author": "Dave Edelhart <dave@wonderlandlabs.com> (http://www.wonderlandlabs.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bingomanatee/nuby-express.git"
+  },
+  "directories": {
+    "tests": "tests"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "https://github.com/bingomanatee/nuby-express/wiki",
+  "scripts": {
+    "test": "nodeunit tests"
+  }
 }
