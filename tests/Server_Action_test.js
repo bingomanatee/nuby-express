@@ -41,7 +41,7 @@ module.exports = {
         framework.start_server(function () {
             test.equal(framework.config.port, 3333, 'port is 3333');
             framework.server().listen(framework.config.port);
-            console.log('server listening at port %s', framework.config.port);
+
             test.done();
         })
     },

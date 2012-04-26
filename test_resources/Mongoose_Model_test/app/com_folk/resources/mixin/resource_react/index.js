@@ -12,7 +12,7 @@ _.extend(Reactor.prototype, {
     _name: 'resource_react',
     type: 'mixin',
     apply: function(target, cb){
-       // console.log('adding alpha');
+       //
         target.alpha = 'abc'.split('');
         cb();
     }

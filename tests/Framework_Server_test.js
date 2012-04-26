@@ -26,14 +26,14 @@ module.exports = {
         'action foo added route /bar/alpha/foo']);
 
         framework.start_load(function(){
-        //    console.log('FS setup done');
+        //
             test.done();
         }, app_path);
     },
 
     test_server_load: function(test){
         framework.start_server(function(){
-           // console.log('server started: log = %s', framework._log.join("\n"));
+           //
             test.deepEqual(fw_log_msgs, _ss(_1(framework._log)), 'all actions logged');
 
                // framework.server().close();

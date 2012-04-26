@@ -58,7 +58,7 @@ module.exports = {
 
         component = new Component({path:component_path});
         controller = new Controller({path:controller_path});
-        console.log('CCT setup done');
+
         component.start_load(function () {
             test.done();
         }, component_path);
@@ -86,7 +86,7 @@ module.exports = {
     },
 
     test_framework_loader:function (test) {
-        //   console.log('--- LOADING FRAMEWORK %s --', framework_path);
+        //
         var fr = new Framework({path:framework_path  });
         fr.start_load(function () {
 

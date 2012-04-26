@@ -5,7 +5,7 @@ var _ = require('underscore');
 var mongoose = require('mongoose');
 
 var _model;
-//console.log('SMR prototype: %s, model: %s', util.inspect(Simple_Model_Resource.prototype), util.inspect(Simple_Model_Resource));
+//
 module.exports = function () {
     if (!_model) {
         var schema = new mongoose.Schema({

@@ -9,7 +9,7 @@ function Simple_Model_Resource(config, data){
 
 util.inherits(Simple_Model_Resource, Simple_Model);
 _.extend(Simple_Model_Resource.prototype, NE.Resource.prototype);
-//console.log('SMR prototype: %s, model: %s', util.inspect(Simple_Model_Resource.prototype), util.inspect(Simple_Model_Resource));
+//
 module.exports = function (data) {
 
     if (!data) {

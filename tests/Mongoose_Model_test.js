@@ -37,9 +37,9 @@ module.exports = {
         framework = new Framework({path:app_path});
 
         framework.start_load(function () {
-            console.log('loaded');
+         //
             var m = folk_model.all(function (err, models) {
-                console.log('model all');
+             //
 
                 if (err) {
                     throw err;
@@ -50,12 +50,12 @@ module.exports = {
 
                 data.forEach(function (folk) {
                     folk_model.put(folk, function (err, doc) {
-                     //   console.log('err: %s, doc:%s', err, util.inspect(doc));
+                     //
                     });
                 })
                 test.done();
             });
-            console.log('all: ', m);
+           //
         }, app_path);
     },
 
@@ -75,7 +75,7 @@ module.exports = {
         framework.start_server(function () {
             test.equal(framework.config.port, 3334, 'port is 3334');
             framework.server().listen(framework.config.port);
-            console.log('server listening at port %s', framework.config.port);
+           //
             test.done();
         })
     },
@@ -85,7 +85,7 @@ module.exports = {
         request.post({uri:root + 'folks',
             form:new_guy
         }, function (err, res, body) {
-            console.log('body: %s', body);
+            //
             var new_guy_json = JSON.parse(body);
             test.equal(new_guy_json.name, new_guy.name, 'made new guy');
             test.ok(new_guy_json._id, 'new guy has id');
@@ -101,13 +101,13 @@ module.exports = {
 
     test_home_response:function (test) {
         request('http://localhost:3334/', function (err, response, body) {
-            console.log('CLOSING MT SERVER');
+
             if (err) {
                 framework.server().close();
                 throw err;
             }
             test.equal(body, fs.readFileSync(app_path + '/controller_home/actions/home/home_view.html').toString(), 'returning view');
-           // console.log('FRAMEWORK SERVER: %s', util.inspect(framework.server(), true, 1));
+           //
            // framework.server().close();
             mongoose.connection.close();
             test.done();
