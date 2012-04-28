@@ -1,0 +1,4 @@
+{
+    "port": 3340,
+    "mongoose": {"db": "layout_test"}
+}

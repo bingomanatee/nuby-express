@@ -1,0 +1,7 @@
+{
+    "method": "*",
+    "get_route": "/folks/:id",
+    "put_route": "/folks/:id",
+    "post_route": "/folks",
+    "delete_route": "/folks/:id"
+}
