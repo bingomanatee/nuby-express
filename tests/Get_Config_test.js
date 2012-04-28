@@ -37,7 +37,10 @@ module.exports = {
     test_config2:function (test) {
         request.get(root + 'config/config2', function (er, re, body) {
             var configs = { dum:[ 4, 3, 1, 2 ] };
-            test.deepEqual(JSON.parse(body), configs, 'testing config');
+            var body_configs = JSON.parse(body);
+            configs.dum = _.sortBy(configs.dum, _.identity);
+            body_configs.dum = _.sortBy(body_configs.dum, _.identity);
+            test.deepEqual(body_configs, configs, 'testing config');
             test.done();
         });
     },
