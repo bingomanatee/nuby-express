@@ -42,8 +42,9 @@ module.exports = {
             test.deepEqual(framework.alpha, 'abc'.split(''), 'framework has alpha after start_server');
             test.deepEqual(framework.def, 'def'.split(''), 'framework has def after start_server');
             var hn = handler_names(framework);
-            //
+
             test.ok(_.contains(hn, 'logger', 'framework server has logger'));
+            console.log('%s server listening to %s ', __filename, framework.config.port);
             framework.server().listen(framework.config.port);
             test.done();
         })
@@ -52,13 +53,14 @@ module.exports = {
     test_widget_post:function (test) {
         request.post({uri:'http://localhost:3332/alpha/mega/foo', form:{name:"quux"}},
             function (err, res, body) {
-           //
+
                 try {
                     test.deepEqual({id: 4, name: "quux"}, JSON.parse(body), 'new widget');
                 } catch (err){
                     test.ok(false, 'cannot parse ' + body);
                 }
-           //     framework.server().close();
+                console.log('%s server DONE listening to %s ', __filename, framework.config.port);
+               framework.server().close();
                 test.done();
 
             });

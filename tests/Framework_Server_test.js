@@ -18,6 +18,10 @@ function _1(a){
     return _.map(a, function(aa){ return aa[0]});
 }
 
+/**
+ * note - this test does not actually start the express server.
+ * @type {Object}
+ */
 module.exports = {
     setup: function(test){
         framework = new Framework({path: app_path});
@@ -26,18 +30,13 @@ module.exports = {
         'action foo added route /bar/alpha/foo']);
 
         framework.start_load(function(){
-        //
             test.done();
         }, app_path);
     },
 
     test_server_load: function(test){
         framework.start_server(function(){
-           //
             test.deepEqual(fw_log_msgs, _ss(_1(framework._log)), 'all actions logged');
-
-               // framework.server().close();
-
             test.done();
         })
     }

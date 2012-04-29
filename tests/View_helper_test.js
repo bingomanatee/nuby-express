@@ -22,6 +22,7 @@ module.exports = {
             framework.start_server(function () {
 
                 test.equal(framework.config.port, 3336, 'port is 3336');
+                console.log('%s server listening to %s ', __filename, framework.config.port);
                 framework.server().listen(framework.config.port);
 
                 test.done();
@@ -37,6 +38,7 @@ module.exports = {
     },
 
     test_done_response:function (test) {
+        console.log('%s server DONE listening to %s ', __filename, framework.config.port);
         framework.server().close();
         mongoose.connection.close();
         test.done();

@@ -22,6 +22,7 @@ module.exports = {
 
     test_server_load:function (test) {
         framework.start_server(function () {
+            console.log('%s server listening to %s ', __filename, framework.config.port);
             framework.server().listen(framework.config.port);
             //
             test.done();

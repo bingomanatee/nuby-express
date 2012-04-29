@@ -4,7 +4,7 @@ var _ = require('underscore');
 
 
 module.exports = {
-    apply: function(server, target, cb){
+    init: function(server, target, cb){
        //
         server.use(Express.logger());
         cb();

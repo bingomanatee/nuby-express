@@ -11,7 +11,7 @@ util.inherits(Reactor, Resource);
 _.extend(Reactor.prototype, {
     _name: 'resource_react',
     type: 'mixin',
-    apply: function(target, cb){
+    init: function(target, cb){
        //
         target.alpha = 'abc'.split('');
         cb();

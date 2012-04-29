@@ -74,8 +74,9 @@ module.exports = {
 
         framework.start_server(function () {
             test.equal(framework.config.port, 3334, 'port is 3334');
+            console.log('server listening to %s ', framework.config.port);
             framework.server().listen(framework.config.port);
-           //
+
             test.done();
         })
     },
@@ -107,8 +108,9 @@ module.exports = {
                 throw err;
             }
             test.equal(body, fs.readFileSync(app_path + '/controller_home/actions/home/home_view.html').toString(), 'returning view');
-           //
-           // framework.server().close();
+
+            console.log('server closing to %s ', framework.config.port);
+           framework.server().close();
             mongoose.connection.close();
             test.done();
         })
