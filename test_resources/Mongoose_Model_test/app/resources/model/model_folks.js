@@ -8,18 +8,16 @@ var _model;
 //
 module.exports = function () {
     if (!_model) {
-        var schema = new mongoose.Schema({
+        var schema ={
             name:String,
             notes:String,
             birthday:Date,
-            gender: Number // 1 = male, -1 = female, 0/other == ??
-        });
+            gender: Number
+        };
 
-        var model = mongoose.model('Folks', schema);
-
-        _model =  Mongoose_Model.create(model, {});
+        _model =  Mongoose_Model.create(schema, {name: 'Folks'});
         _model.type = 'type';
         _model.name = 'folks';
     }
     return _model;
-}
+};
