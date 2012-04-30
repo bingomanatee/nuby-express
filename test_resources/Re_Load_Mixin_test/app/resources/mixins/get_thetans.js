@@ -3,6 +3,7 @@ var util = require('util');
 var fs = require('fs');
 var NE = require('../../../../../lib');
 var async = require('async');
+var path = require('path');
 var Loader = NE.Loader;
 
 /* *************** MODULE ********* */
@@ -17,14 +18,22 @@ module.exports = {
             filename:'thetan.json',
             name:'theta_path_handler',
 
+            can_handle:function (match_path) {
+                var basename = path.basename(match_path);
+                console.log('thetan testing %s; base == %s', match_path, basename);
+                var out = basename ==  this.filename;
+                console.log('TEST: %s', out ? 'y' : 'n');
+                return out;
+            },
+
             execute:function (match_path, theta_cb, target, match, context) {
                 console.log('thetan match path: %s', match_path);
 
-                if (!target.thetans) {
-                    target.thetans = [];
+                if (!target.config.thetans) {
+                    target.config.thetans = [];
                 }
 
-                fs.readfile(match_path, 'utf8', function (err, contents) {
+                fs.readFile(match_path, 'utf8', function (err, contents) {
                     if (err) {
                         console.log('error in theta mixin: %s', err.toString());
                         theta_cb(err);

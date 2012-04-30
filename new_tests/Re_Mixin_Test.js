@@ -30,7 +30,7 @@ module.exports = {
                 framework.server().listen(framework.config.port);
                 test.deepEqual({}, framework.config.thetans, 'thetans');
                 test.done();
-            }, 3000);
+            }, 6000);
 
         })
     },
