@@ -7,7 +7,7 @@ var fs = require('fs');
 module.exports = {
     name: 'say_home_controller',
     init: function(frame, cb){
-        frame.configs.controllers_loaded.push('home');
+        frame.config.controllers_loaded.push('home');
         cb();
     }
 }

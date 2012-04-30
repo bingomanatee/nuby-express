@@ -7,7 +7,7 @@ var fs = require('fs');
 module.exports = {
     name: 'say_config_controller',
     init: function(frame, cb){
-        frame.configs.controllers_loaded.push('config');
+        frame.config.controllers_loaded.push('config');
         cb();
     }
 }
