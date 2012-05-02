@@ -1,4 +1,4 @@
-var Framework = require('../lib/Framework');
+var NE = require('./.');
 var path = require('path');
 var _ = require('underscore');
 var util = require('util');
@@ -13,16 +13,24 @@ var root = 'http://localhost:3333/';
 
 module.exports = {
     setup:function (test) {
-        framework = new Framework({path:app_path});
+        framework = new NE.Framework({path:app_path});
 
         framework.start_load(function () {
-            framework.start_server(function () {
-                test.equal(framework.config.port, 3333, 'port is 3333');
-                framework.server().listen(framework.config.port);
-
-                test.done();
-            })
+            test.done();
         }, app_path);
+    },
+
+    test_server: function(test){
+
+        framework.start_server(function () {
+            console.log('server started');
+            console.log('framework: %s', util.inspect(framework));
+
+            test.equal(framework.config.port, 3333, 'port is 3333');
+            framework.server().listen(framework.config.port);
+
+            test.done();
+        })
     },
 
     test_config:function (test) {
