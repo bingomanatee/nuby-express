@@ -1,0 +1,467 @@
+[
+    {
+        "msg":"Starting load",
+        "root":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+        "context":"none"
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 1",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+            "context":{
+                "id":"FRAMEWORK 2",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+                "config":{
+                    "port":80
+                },
+                "controllers":[]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":1,
+            "re":{},
+            "type":"dir",
+            "name":"com_controller"
+        },
+        "props":{
+            "id":"File_Props 1",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+            "context":{
+                "id":"FRAMEWORK 2",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+                "config":{
+                    "port":80
+                },
+                "controllers":[]
+            }
+        }
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 3",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers",
+            "context":{
+                "id":"FRAMEWORK 2",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+                "config":{
+                    "port":80
+                },
+                "controllers":[]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":2,
+            "type":"dir",
+            "re":{},
+            "name":"component_controller_dir"
+        },
+        "props":{
+            "id":"File_Props 3",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers",
+            "context":{
+                "id":"FRAMEWORK 2",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+                "config":{
+                    "port":80
+                },
+                "controllers":[]
+            }
+        }
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 4",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/frame_config.json",
+            "context":{
+                "id":"FRAMEWORK 2",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+                "config":{
+                    "port":80
+                },
+                "controllers":[]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":5,
+            "name":"framework_config_handler",
+            "type":"file",
+            "re":{}
+        },
+        "props":{
+            "id":"File_Props 4",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/frame_config.json",
+            "context":{
+                "id":"FRAMEWORK 2",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+                "config":{
+                    "port":80
+                },
+                "controllers":[]
+            }
+        }
+    },
+    {
+        "msg":"Starting load",
+        "root":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+        "context":"none"
+    },
+    {
+        "msg":"Starting load",
+        "root":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers",
+        "context":{
+            "id":"FRAMEWORK 2",
+            "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+            "config":{
+                "port":80
+            },
+            "controllers":[
+                {
+                    "id":"CONTROLLER 6",
+                    "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+                    "config":{},
+                    "actions":[]
+                }
+            ]
+        }
+    },
+    {
+        "msg":"Final Framework",
+        "frame":{
+            "id":"FRAMEWORK 2",
+            "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+            "config":{
+                "port":80,
+                "framework_foo":1,
+                "framework_bar":2
+            },
+            "controllers":[
+                {
+                    "id":"CONTROLLER 6",
+                    "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+                    "config":{},
+                    "actions":[]
+                }
+            ]
+        }
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 7",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct/con_alpha_config.json",
+            "context":{
+                "id":"CONTROLLER 6",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+                "config":{},
+                "actions":[]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":9,
+            "name":"con_config_handler",
+            "type":"file",
+            "re":{}
+        },
+        "props":{
+            "id":"File_Props 7",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct/con_alpha_config.json",
+            "context":{
+                "id":"CONTROLLER 6",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+                "config":{},
+                "actions":[]
+            }
+        }
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 8",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+            "context":{
+                "id":"FRAMEWORK 2",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+                "config":{
+                    "port":80,
+                    "framework_foo":1,
+                    "framework_bar":2
+                },
+                "controllers":[
+                    {
+                        "id":"CONTROLLER 6",
+                        "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+                        "config":{},
+                        "actions":[]
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":11,
+            "re":{},
+            "type":"dir",
+            "name":"cd_controller"
+        },
+        "props":{
+            "id":"File_Props 8",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+            "context":{
+                "id":"FRAMEWORK 2",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app",
+                "config":{
+                    "port":80,
+                    "framework_foo":1,
+                    "framework_bar":2
+                },
+                "controllers":[
+                    {
+                        "id":"CONTROLLER 6",
+                        "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/con_direct",
+                        "config":{},
+                        "actions":[]
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "msg":"Starting load",
+        "root":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+        "context":"none"
+    },
+    {
+        "foo":1
+    },
+    {
+        "bar":2
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 9",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+            "context":{
+                "id":"CONTROLLER 10",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+                "config":{},
+                "actions":[]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":12,
+            "type":"dir",
+            "re":{},
+            "name":"controller_action_handler"
+        },
+        "props":{
+            "id":"File_Props 9",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+            "context":{
+                "id":"CONTROLLER 10",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+                "config":{},
+                "actions":[]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":13,
+            "type":"dir",
+            "re":{},
+            "name":"controller_action_dir_handler"
+        },
+        "props":{
+            "id":"File_Props 9",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+            "context":{
+                "id":"CONTROLLER 10",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+                "config":{},
+                "actions":[]
+            }
+        }
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 11",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/con_alpha_config.json",
+            "context":{
+                "id":"CONTROLLER 10",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+                "config":{},
+                "actions":[]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":14,
+            "name":"con_config_handler",
+            "type":"file",
+            "re":{}
+        },
+        "props":{
+            "id":"File_Props 11",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/con_alpha_config.json",
+            "context":{
+                "id":"CONTROLLER 10",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+                "config":{},
+                "actions":[]
+            }
+        }
+    },
+    {
+        "msg":"Starting load",
+        "root":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+        "context":"none"
+    },
+    {
+        "msg":"Starting load",
+        "root":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+        "context":{
+            "id":"CONTROLLER 10",
+            "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+            "config":{},
+            "actions":[
+                {
+                    "id":"ACTION 12",
+                    "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+                    "config":{},
+                    "method":"get",
+                    "route":false
+                }
+            ]
+        }
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 14",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions/foo",
+            "context":{
+                "id":"ACTION 12",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+                "config":{},
+                "method":"get",
+                "route":false
+            }
+        }
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 15",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions/foo",
+            "context":{
+                "id":"CONTROLLER 10",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+                "config":{
+                    "con_direct_name":"direct*************** "
+                },
+                "actions":[
+                    {
+                        "id":"ACTION 12",
+                        "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+                        "config":{},
+                        "method":"get",
+                        "route":false
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":18,
+            "type":"dir",
+            "re":{},
+            "name":"controller_action_handler"
+        },
+        "props":{
+            "id":"File_Props 15",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions/foo",
+            "context":{
+                "id":"CONTROLLER 10",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct",
+                "config":{
+                    "con_direct_name":"direct*************** "
+                },
+                "actions":[
+                    {
+                        "id":"ACTION 12",
+                        "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions",
+                        "config":{},
+                        "method":"get",
+                        "route":false
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "msg":"Starting load",
+        "root":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions/foo",
+        "context":"none"
+    },
+    {
+        "msg":"emitting",
+        "target":{
+            "id":"File_Props 17",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions/foo/foo_config.json",
+            "context":{
+                "id":"ACTION 16",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions/foo",
+                "config":{},
+                "method":"get",
+                "route":false
+            }
+        }
+    },
+    {
+        "msg":"handler handling prop",
+        "handler":{
+            "_id":19,
+            "name":"action_config_handler",
+            "type":"file",
+            "re":{}
+        },
+        "props":{
+            "id":"File_Props 17",
+            "full_path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions/foo/foo_config.json",
+            "context":{
+                "id":"ACTION 16",
+                "path":"/Users/dedelhart/OS/test_express_3/node_modules/nuby-express/test_resources/Controller_test/app/controllers/direct/actions/foo",
+                "config":{},
+                "method":"get",
+                "route":false
+            }
+        }
+    }
+]

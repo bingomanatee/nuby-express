@@ -3,7 +3,7 @@ var path = require('path');
 var _ = require('underscore');
 var util = require('util');
 var request = require('request');
-
+var fs = require('fs');
 var framework;
 
 var app_path = path.resolve(__dirname + '/../test_resources/Resources_Test/app');
@@ -23,19 +23,24 @@ function _1(a) {
 module.exports = {
     setup:function (test) {
         framework = new Framework({path:app_path});
-
-        framework.start_load(function () {
-
-            //
-            test.done();
-        }, app_path);
+        test.done();
     },
 
-    test_server_load:function (test) {
+    test_no_abc: function(test){
         framework.on('load_done', function () {
             test.ok(!(framework.hasOwnProperty('abc')),
                 'framework doesn\'t have alpha on load done');
         });
+
+        framework.start_load(function () {
+            var report = JSON.stringify(framework.to_JSON());
+            fs.writeFile(path.normalize(__dirname + './../test_reports/Resources_test/' + new Date().getTime() + '.json'), report, function(){
+                test.done();
+            });
+        }, app_path);
+    },
+
+    test_server_load:function (test) {
 
         framework.start_server(function () {
 
@@ -52,7 +57,10 @@ module.exports = {
     test_widget_post:function (test) {
         request.post({uri:'http://localhost:3332/alpha/mega/foo', form:{name:"quux"}},
             function (err, res, body) {
-           //
+                if (err){
+                    throw err;
+                }
+            if (!body) body = '';
                 try {
                     test.deepEqual({id: 4, name: "quux"}, JSON.parse(body), 'new widget');
                 } catch (err){
