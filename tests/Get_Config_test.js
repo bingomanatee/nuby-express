@@ -1,4 +1,4 @@
-var NE = require('./.');
+var NE = require('./../lib');
 var path = require('path');
 var _ = require('underscore');
 var util = require('util');

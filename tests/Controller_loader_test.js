@@ -1,4 +1,4 @@
-var Framework = require('./.').Framework;
+var Framework = require('./../lib').Framework;
 var path = require('path');
 var _ = require('underscore');
 var util = require('util');

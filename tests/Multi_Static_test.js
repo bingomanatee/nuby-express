@@ -22,8 +22,9 @@ module.exports = {
 
     test_server_load:function (test) {
         framework.start_server(function () {
+           // console.log('resources: %s', util.inspect(framework.get_resources()));
             framework.server().listen(framework.config.port);
-            //
+          //  console.log('>>>>>>>>> framework loaded: %s', util.inspect(framework, true, 4));
             test.done();
         })
     },
