@@ -4,7 +4,7 @@ var fs = require('fs');
 var events = require('events');
 
 var _ = require('underscore');
-var File_Loader = require('./.');
+var File_Loader = require('./');
 
 var file_paths = [
     '/test_resources/Loader_test/.b',

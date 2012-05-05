@@ -1,29 +1,32 @@
-var NE = require('./../lib');
+var NE = require('./.');
 var path = require('path');
 var _ = require('underscore');
 var util = require('util');
 var request = require('request');
 var fs = require('fs');
 var path = require('path');
+var logger = require('./../lib/utility/logger');
 
 var framework;
 
 var app_path = path.resolve(__dirname + '/../test_resources/Server_Action_test/app');
 var root = 'http://localhost:3333/';
-
+var started = false;
+logger.init(__dirname + './../test_reports/Get_Config_test/log.json');
 module.exports = {
-    setUp:function (cb) {
+    test_start:function (t) {
         framework = new NE.Framework({path:app_path});
-
         framework.start_load(function () {
-            console.log('load done');
 
             framework.start_server(function () {
-                console.log('server started');
-                //   console.log('framework: %s', util.inspect(framework));
+                if (started)
+                {
+                    throw new Error('attempt to start server twice');
+                }
+                started = true;
                 framework.server().listen(framework.config.port);
 
-                cb();
+                t.done();
             })
         }, app_path);
     },
@@ -54,6 +57,7 @@ module.exports = {
                 configs.dum = _.sortBy(configs.dum, _.identity);
                 body_configs.dum = _.sortBy(body_configs.dum, _.identity);
                 test.deepEqual(body_configs, configs, 'testing config');
+                test.done();
             } catch (err) {
                 console.log('bad', body, 'cannot parse body');
             }
@@ -61,8 +65,8 @@ module.exports = {
         });
     },
 
-    tearDown:function (cb) {
+    test_done:function (test) {
         framework.server().close();
-        cb();
+        test.done();
     }
 }
