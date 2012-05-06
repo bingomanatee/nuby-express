@@ -43,18 +43,24 @@ module.exports = {
             }
         });
 
-        var gate = new Gate(cb, 'rescan layouts');
-     //   gate.debug=true;
 
-        var loader = new NE.Loader({path: frame.path});
-        loader.add_handler(layout_dir_handler);
-        gate.task_start();
-        loader.start_load(function(){
-         //   console.log('ldh: loader %s', util.inspect(loader));
+        //   var gate = new Gate(cb, 'rescan layouts');
+        //   gate.debug=true;
+
+        frame.reload([layout_dir_handler], function(loader){
+            //   console.log('ldh: loader %s', util.inspect(loader));
             frame.add_resources(loader.get_resources('layout'));
-            gate.task_done();
-        }, frame.path);
-        gate.start();
-     //   console.log('scanning %s', frame.path);
+            cb();
+        });
+        /*   var loader = new NE.Loader({path: frame.path});
+         loader.add_handler(layout_dir_handler);
+         gate.task_start();
+         loader.start_load(function(){
+         //   console.log('ldh: loader %s', util.inspect(loader));
+         frame.add_resources(loader.get_resources('layout'));
+         gate.task_done();
+         }, frame.path);
+        gate.start();*/
+        //   console.log('scanning %s', frame.path);
     }
 }

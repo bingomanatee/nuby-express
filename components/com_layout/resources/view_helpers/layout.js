@@ -19,5 +19,5 @@ var _layout_view = new NE.helpers.View( {
 });
 
 module.exports = function () {
-    return _js_view;
+    return _layout_view;
 }

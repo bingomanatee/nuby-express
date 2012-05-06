@@ -1,4 +1,5 @@
 {
     "route": "/",
-    "method": "get"
+    "method": "get",
+    "layout_name": "foo"
 }

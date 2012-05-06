@@ -46,8 +46,8 @@ module.exports = {
                     }
 
                     request(root + 'thereisnofile.txt', function(e, res, static_non_body){
-                     //   console.log('static body: %s', static_non_body);
-                        test.ok(/^Error: ENOENT,/.test(static_non_body), 'error for non file');
+                       // console.log('static body: %s; err: %s', static_non_body, util.inspect(res));
+                        test.equals(res.statusCode, 404, 'error for non file');
                         test.done();
                     })
                 })
