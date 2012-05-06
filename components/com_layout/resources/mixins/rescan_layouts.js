@@ -26,6 +26,7 @@ module.exports = {
             loader.add_handler(layout_dir_handler);
             gate.task_start();
             loader.load(function(){
+                console.log('ldh: loader %s', util.inspect(loader));
                 frame.add_resources(loader.get_resources('layout'));
                 gate.task_done();
             })
