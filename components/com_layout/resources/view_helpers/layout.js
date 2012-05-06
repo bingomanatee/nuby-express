@@ -1,37 +1,40 @@
 var NE = require('nuby-express');
 var _ = require('underscore');
 var util = require('util');
+var _DEBUG = false;
 
-var _layout_view = new NE.helpers.View( {
-    name: 'layout_seletor',
+var _layout_view = new NE.helpers.View({
+    name:'layout_seletor',
 
-    init: function(rs, input, cb){
-      //  console.log('input for layout view: %s', util.inspect(input));
-        if (input.hasOwnProperty('layout_name')){
-            if (input.layout_name){
-                console.log('desiring layout %s', input.layout_name);
-                var layout = rs.framework.get_resource('layout', input.layout_name);
-                if (layout){
-                    input.layout = layout.template;
-                } else {
-                    throw new Error('cannot find layout %s', input.layout_name);
-                }
+    init:function (rs, input, cb) {
+
+        function _fetch_layout(key) {
+            console.log('desiring layout %s', key);
+            var layout = rs.framework.get_resource('layout', key);
+            if (layout) {
+                if (_DEBUG) console.log('found layout %s: template = %s', key, layout.template);
+                input.layout = layout.template;
             } else {
-                input.layout = false;
-            }
-        } else if (rs.action.config.hasOwnProperty('layout_name')){
-            if (rs.action.config.layout_name){
-                console.log('desiring layout %s', rs.action.config.layout_name);
-                var layout = rs.framework.get_resource('layout', rs.action.config.layout_name);
-                if (layout){
-                    input.layout = layout.template;
-                } else {
-                    throw new Error('cannot find layout %s', rs.action.config.layout_name);
-                }
-            } else {
-                input.layout = false;
+                throw new Error('cannot find layout %s', key);
             }
         }
+
+        if (_DEBUG) console.log('input for layout view: %s', util.inspect(input));
+
+        if (input.hasOwnProperty('layout_name')) {
+            _fetch_layout(input.layout_name);
+        } else {
+            ln = rs.action.get_config('layout_name', 'NO LAYOUT')
+
+            if (ln != 'NO LAYOUT') {
+                if (ln) {
+                    _fetch_layout(ln);
+                } else {
+                    input.layout = false;
+                }
+            }
+        }
+
         cb(null, this.name);
     }
 
