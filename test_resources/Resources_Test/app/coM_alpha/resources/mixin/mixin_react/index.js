@@ -11,7 +11,7 @@ util.inherits(Reactor, Resource);
 _.extend(Reactor.prototype, {
     _name: 'resource_react',
     type: 'mixin',
-    start_server: function(frame, cb){
+    init: function(frame, cb){
        //
         frame.alpha = 'abc'.split('');
         cb();
