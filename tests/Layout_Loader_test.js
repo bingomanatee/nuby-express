@@ -25,7 +25,7 @@ module.exports = {
     test_layout:function (test) {
         var layout_names = _.pluck(framework.get_resources('layout'), 'name');
         layout_names = _.sortBy(layout_names, _.identity);
-        test.deepEqual(layout_names, ['foo']);
+        test.deepEqual(layout_names, ['folks', 'foo']);
         test.done();
     },
 
@@ -49,6 +49,14 @@ module.exports = {
     test_base: function(test){
         request.get(app_uri + '/bar/bar2', function (err, res, body) {
             test.equal('Bar2', body, 'testing home page with foo layout');
+            // console.log(util.inspect(res));
+            test.done();
+        });
+    },
+
+    test_fokls: function(test){
+        request.get(app_uri + '/bar/bar3', function (err, res, body) {
+            test.equal('<folks>Bar3</folks>', body, 'testing home page with foo layout');
             // console.log(util.inspect(res));
             test.done();
         });

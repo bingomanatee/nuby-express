@@ -11,7 +11,7 @@ module.exports = {
             type: 'dir',
             re: /(.*)/,
             execute: function(props, callback){
-                console.log('making layout over %s', props.full_path);
+           //     console.log('making layout over %s', props.full_path);
                 var layout_res = new NE.Layout({
                    path: props.full_path
                 });
@@ -28,7 +28,7 @@ module.exports = {
             re: /^layout(s)?$/,
             type: 'dir',
             execute: function(props, kkk){
-                console.log('found layout dir %s', props.full_path);
+             //   console.log('found layout dir %s', props.full_path);
                 var layout_loader = new NE.Loader({path: props.full_path});
                 layout_loader.add_handler(layout_handler);
 
@@ -43,15 +43,28 @@ module.exports = {
             }
         });
 
-
-        //   var gate = new Gate(cb, 'rescan layouts');
+        var gate = new Gate(cb, 'rescan layouts');
         //   gate.debug=true;
 
-        frame.reload([layout_dir_handler], function(loader){
+        function _after_load(loader){
             //   console.log('ldh: loader %s', util.inspect(loader));
             frame.add_resources(loader.get_resources('layout'));
-            cb();
-        });
+            gate.task_done()
+        }
+
+        frame.get_controllers().forEach(function(con){
+            gate.task_start();
+            con.reload([layout_dir_handler], _after_load);
+        })
+
+        frame.get_components().forEach(function(con){
+            gate.task_start();
+            con.reload([layout_dir_handler], _after_load);
+        })
+
+
+        gate.task_start();
+        frame.reload([layout_dir_handler], _after_load);
         /*   var loader = new NE.Loader({path: frame.path});
          loader.add_handler(layout_dir_handler);
          gate.task_start();
@@ -60,7 +73,7 @@ module.exports = {
          frame.add_resources(loader.get_resources('layout'));
          gate.task_done();
          }, frame.path);
-        gate.start();*/
-        //   console.log('scanning %s', frame.path);
+       */
+        gate.start(); //   console.log('scanning %s', frame.path);
     }
 }
