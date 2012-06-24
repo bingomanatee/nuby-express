@@ -5,7 +5,7 @@ var util = require('util');
 var request = require('request');
 var fs = require('fs');
 var path = require('path');
-
+var mongoose = require('mongoose');
 var framework;
 
 var app_path = path.normalize(__dirname + '/../test_resources/Multi_Static_test/app');
@@ -57,6 +57,7 @@ module.exports = {
 
     test_done_response:function (test) {
         framework.server().close();
+        mongoose.disconnect();
         test.done();
     }
 

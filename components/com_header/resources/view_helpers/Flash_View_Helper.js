@@ -2,6 +2,7 @@ var NE = require('nuby-express');
 var _ = require('underscore');
 var util = require('util');
 
+
 var each_msg = '<% md.messages.forEach(function(msg){ %>' +
     '<li><%= msg %></li>' +
     '<% }) %>';

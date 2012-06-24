@@ -1,12 +1,13 @@
 {
     "name":"nuby-express",
-    "version":"2.1.0",
+    "version":"2.1.6",
     "main":"index",
-    "description":"A web framework based on Express, Ruby, MVC.",
+    "description":"A web framework based on Express, Ruby, MVC; emphasis on flexible, recursive directory loading",
     "keywords":[
         "web",
         "framework",
-        "express"
+        "express",
+        "MVC"
     ],
     "author":{
         "name":"Dave Edelhart",
@@ -26,25 +27,30 @@
     },
     "dependencies":{
         "express":"~2.5.9",
-        "mongoose":"~2.6.0",
-        "request":"~2.9.202",
+        "mongoose":">=2.6.0",
+        "request":">=2.9.202",
         "underscore":">=1.2.3",
-        "support":">=1.0.0",
-        "async":">=0.1.10"
+        "support":">=1.0.3",
+        "async":">=0.1.22",
+        "microtime":">=0.3.1",
+        "mime":">=1.2.4",
+        "cli-table":">=0.0.2",
+        "ejs": ">=0.7.2",
+        "nodeunit": ">=0.7.4"
     },
     "devDependencies":{},
     "homepage":"https://github.com/bingomanatee/nuby-express/wiki",
     "scripts":{
         "test":"nodeunit tests"
     },
-    "_id":"nuby-express@2.0.4",
+    "_id":"nuby-express@2.1.5",
     "optionalDependencies":{},
     "_engineSupported":true,
-    "_npmVersion":"1.1.16",
-    "_nodeVersion":"v0.6.15",
+    "_npmVersion":"1.1.21",
+    "_nodeVersion":"v0.6.17",
     "_defaultsLoaded":true,
     "dist":{
-        "shasum":"80f104e9ad6250a378baea1d7987772129fbb090"
+        "shasum":"de82dff8a4d59d6e08163962bcee5269306528cd"
     },
-    "_from":"nuby-express"
+    "_from":"nuby-express@2.1.5"
 }

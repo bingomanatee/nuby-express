@@ -8,7 +8,7 @@ var app_path = module_root + '/test_resources/Layout_Test/app';
 var NE = require(module_root + '/lib')
 var framework;
 var request = require('request');
-
+var mongoose = require('mongoose');
 var app_uri = 'http://localhost:3344';
 
 module.exports = {
@@ -64,6 +64,7 @@ module.exports = {
 
     test_done:function (test) {
         framework.server().close();
+        mongoose.disconnect();
         test.done();
     }
 
