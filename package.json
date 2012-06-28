@@ -43,7 +43,7 @@
   "scripts": {
     "test": "nodeunit tests"
   },
-  "_id": "nuby-express@2.1.6",
+  "_id": "nuby-express@2.1.7",
   "optionalDependencies": {},
   "_engineSupported": true,
   "_npmVersion": "1.1.21",
@@ -55,5 +55,6 @@
   "_npmUser": {
     "name": "bingomanatee",
     "email": "dave@wonderlandlabs.com"
-  }
+  },
+  "_from": "nuby-express"
 }
