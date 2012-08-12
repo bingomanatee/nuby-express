@@ -25,7 +25,7 @@ module.exports = {
     test_layout:function (test) {
         var layout_names = _.pluck(framework.get_resources('layout'), 'name');
         layout_names = _.sortBy(layout_names, _.identity);
-        test.deepEqual(layout_names, ['folks', 'foo']);
+        test.deepEqual(layout_names, ['empty','folks', 'foo'], 'find layouts');
         test.done();
     },
 

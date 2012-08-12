@@ -263,7 +263,7 @@ module.exports = {
         var output_input = '';
         var _pi_expect = 'foo';
         var go_route = '';
-        var go_error_route = '/err_route';
+        var post_error_route = '/err_route';
         var messages = [];
 
         var rs = new mock_rs({_method:'post', req_props:_pi_expect,
@@ -297,15 +297,21 @@ module.exports = {
                 this.on_post_input(rs);
             },
 
-            on_post_process:function (rs) {
-                this.on_post_process_error(rs, 'post process error', go_error_route)
+            on_post_input:function (rs) {
+                this.on_post_process(rs, {})
+            },
+
+            on_post_process:function (rs, input) {
+                this.on_post_process_error(rs, 'post process error')
             },
 
             on_output:function (rs, input) {
                 output_reached = true;
                 output_input = input;
                 // output short circuit
-            }
+            },
+
+              _on_post_error_go: post_error_route
 
         });
 
@@ -316,7 +322,7 @@ module.exports = {
         test.ok(!on_input_reached, 'on_input was not reached');
         test.ok(on_post_reached, 'on_post was reached');
         test.ok(!output_reached, 'output was not reached');
-        test.equals(go_route, go_error_route, 'go was sent to error');
+        test.equals(go_route, post_error_route, 'go was sent to error');
         test.done();
     },
 
@@ -368,7 +374,7 @@ module.exports = {
                 this.on_post_process_error(rs, 'post process error')
             },
 
-            _on_post_process_error_go: go_error_route,
+            _on_post_process_error_go:go_error_route,
 
             on_output:function (rs, input) {
                 output_reached = true;
