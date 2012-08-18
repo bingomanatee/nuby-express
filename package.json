@@ -1,6 +1,6 @@
 {
   "name": "nuby-express",
-  "version": "2.1.9",
+  "version": "2.1.10",
   "main": "index",
   "description": "A web framework based on Express, Ruby, MVC; emphasis on flexible, recursive directory loading",
   "keywords": [
@@ -49,9 +49,6 @@
   "_npmVersion": "1.1.21",
   "_nodeVersion": "v0.6.17",
   "_defaultsLoaded": true,
-  "dist": {
-    "shasum": "de82dff8a4d59d6e08163962bcee5269306528cd"
-  },
   "_npmUser": {
     "name": "bingomanatee",
     "email": "dave@wonderlandlabs.com"
