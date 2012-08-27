@@ -302,7 +302,7 @@ module.exports = {
             },
 
             on_post_process:function (rs, input) {
-                this.on_post_process_error(rs, 'post process error')
+                this.emit('process_error',rs, 'post process error')
             },
 
             on_output:function (rs, input) {
@@ -371,7 +371,7 @@ module.exports = {
             },
 
             on_post_process:function (rs) {
-                this.on_post_process_error(rs, 'post process error')
+                this.emit('process_error',rs, 'post process error')
             },
 
             _on_post_process_error_go:go_error_route,
