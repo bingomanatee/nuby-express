@@ -48,9 +48,10 @@ module.exports = {
         component = new NE.Component({path:component_path});
         controller = new NE.Controller({path:controller_path});
 
+        var fr = new NE.Framework({path:framework_path  });
         component.start_load(function () {
             test.done();
-        }, component_path);
+        }, component_path, fr);
     },
 
     test_component_loader:function (test) {
@@ -62,6 +63,7 @@ module.exports = {
     },
 
     test_controller_loader:function (test) {
+        var fr = new NE.Framework({path:framework_path  });
         controller.start_load(function () {
             test.deepEqual(controller_actions, _ss(controller.action_names()), 'controller action nanes');
             test.equal(controller.heritage(), 'alpha', 'controller heritage');
@@ -71,7 +73,7 @@ module.exports = {
 
             test.deepEqual(controller_loader_actions, action_h, 'action heritages');
             test.done();
-        }, controller_path);
+        }, controller_path, fr);
     },
 
     test_framework_loader:function (test) {
@@ -93,7 +95,7 @@ module.exports = {
 
             test.done();
 
-        }, framework_path);
+        }, framework_path, fr);
     }
 
 }

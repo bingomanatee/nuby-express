@@ -59,14 +59,20 @@ module.exports = {
                     test.ok(Roger_JSON._id, 'return json has ID');
                     var id = Roger_JSON._id;
                     delete Roger_JSON._id;
+                    delete Roger_JSON.__v;
+                    delete Roger.__v;
+
                     test.deepEqual(Roger, Roger_JSON, 'Rogering');
 
                     /* *********** RETRIEVE ROGER **************** */
 
                     process.nextTick(function () {
                         request.get(root + 'folks/' + id, function (err, rest, get_body) {
-                          //
-                            test.equal(put_body, get_body, 'Can retrieve Roger');
+                            get_body = JSON.parse(get_body);
+                            put_body = JSON.parse(put_body);
+                          delete get_body.__v;
+                            delete put_body.__v;
+                            test.deepEqual(put_body, get_body, 'Can retrieve Roger');
 
                             /* *********** CALL HIM ROD ************** */
 

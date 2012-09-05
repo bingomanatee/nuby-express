@@ -7,10 +7,16 @@ var NE = require('./../lib');
 /* ***************** CLOSURE ************* */
 
 function mock_rs(config) {
+    this.CLASS = 'Req_State'
     this.req_props = {};
     if (config) {
         _.extend(this, config);
     }
+    if (!this.req){
+        this.req = {url: 'foo'}
+    }
+
+   // console.log('this: %s', util.inspect(this, true, 1));
 }
 
 _.extend(mock_rs.prototype, {
@@ -220,6 +226,7 @@ module.exports = {
                 messages.push({type:type, msg:msg});
             },
             go:function (route) {
+             //   console.log('mock go route: %s', route);
                 if (go_route) {
                     throw new Error('go_route called twice: first = '
                         + go_route + ', second = ' + route);
@@ -232,14 +239,19 @@ module.exports = {
             name:'test3',
 
             on_validate:function (rs) {
-                this.on_validate_error(rs, 'on validate fail');
+                if (!rs){
+                    throw new Error(' no rs dude');
+                }
+                this.emit('validate_error', rs, 'on validate fail');
             },
 
             on_output:function (rs, input) {
                 output_reached = true;
                 output_input = input;
                 rs.go('success');
-            }
+            },
+
+            _on_error_go: '/'
 
         });
 

@@ -12,7 +12,7 @@ var framework;
 var app_path = path.resolve(__dirname + '/../test_resources/Server_Action_test/app');
 var root = 'http://localhost:3333/';
 var started = false;
-logger.init(__dirname + './../test_reports/Get_Config_test/log.json');
+//logger.init(__dirname + './../test_reports/Get_Config_test/log.json');
 module.exports = {
     test_start:function (t) {
         framework = new NE.Framework({path:app_path});

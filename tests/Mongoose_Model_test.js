@@ -30,7 +30,7 @@ var data = [
     {name:'Susan Soy', gender:-1, notes:'Puts out', birthday:new Date('1/10/1980')}
 ];
 
-var root = 'http://localhost:3334/';
+var root = 'http://localhost:3434/';
 
 module.exports = {
     setup_test: function (test) {
@@ -66,7 +66,7 @@ module.exports = {
         });
 
         framework.start_server(function () {
-            test.equal(framework.config.port, 3334, 'port is 3334');
+            test.equal(framework.config.port, 3434, 'port is 3434');
             framework.server().listen(framework.config.port);
            //
             test.done();
@@ -78,7 +78,7 @@ module.exports = {
         request.post({uri:root + 'folks',
             form:new_guy
         }, function (err, res, body) {
-            //
+            console.log('body: %s', body);
             var new_guy_json = JSON.parse(body);
             test.equal(new_guy_json.name, new_guy.name, 'made new guy');
             test.ok(new_guy_json._id, 'new guy has id');
@@ -93,7 +93,7 @@ module.exports = {
     },
 
     test_home_response:function (test) {
-        request('http://localhost:3334/', function (err, response, body) {
+        request('http://localhost:3434/', function (err, response, body) {
 
             if (err) {
                 framework.server().close();
@@ -102,7 +102,7 @@ module.exports = {
             test.equal(body, fs.readFileSync(app_path + '/controller_home/actions/home/home_view.html').toString(), 'returning view');
            //
             framework.server().close();
-            mongoose.connection.close();
+            mongoose.disconnect();
             test.done();
         })
     }

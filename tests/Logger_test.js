@@ -7,33 +7,37 @@ var _ = require('underscore');
 var logger = require('./../lib/utility/logger');
 
 var log_path;
-var foo_msg;
-var bar_msg;
+var foo_msg = {foo:1};
+var bar_msg = {bar:2};
 
 module.exports = {
-    setup:function (test) {
+    setUp:function (cb) {
         log_path = __dirname + '/../test_reports/Logger_tests/log.json';
-        logger.init(log_path);
-        test.done();
-        foo_msg = {foo:1};
-        bar_msg = {bar:2};
+        logger.set_log_file(log_path, {reset:true});
+        setTimeout(cb, 500);
     },
 
     test_logger:function (test) {
-        logger.log(foo_msg);
-        logger.log(bar_msg);
-        test.done();
-    },
+        logger.log('foo', foo_msg);
+        logger.log('bar', bar_msg);
 
-    test_logger_output:function (test) {
-        fs.readFile(path.normalize(log_path), 'utf8', function(err, contents){
-            if (err){
-                throw err;
-            }
-            console.log('log = %s', contents);
-            test.equal(contents, JSON.stringify([foo_msg, bar_msg]), 'contents equal JSON.');
-            test.done();
-        });
+        function _notime(d){
+            delete d.time;
+            return d
+        }
+
+        setTimeout(function () {
+            logger.log_to_obj(function (err, content) {
+                console.log('content: %s (%s)', util.inspect(content), typeof content);
+                test.deepEqual([
+                    { task:'foo', content:{ foo:1 } },
+                    { task:'bar', content:{ bar:2 } },
+                    { task:'end' }]
+                , _.map(content, _notime), 'content of log');
+                test.done();
+            })
+
+        }, 200);
     }
 
 };

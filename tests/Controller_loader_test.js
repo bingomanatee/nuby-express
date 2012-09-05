@@ -19,10 +19,10 @@ module.exports = {
         framework.start_load(function () {
             framework.log('Framework loaded');
             console.log("ALL DONE LADING FRAMEWORK!");
-            logger.init(__dirname + './../test_reports/Controller_loader_test/log.json');
+            //logger.init(__dirname + './../test_reports/Controller_loader_test/log.json');
             test.deepEqual(['beta', 'direct'], _.map(framework.controller_names(), _.identity));
             test.done();
-        }, app_path);
+        }, app_path, framework);
 
         /*   var i = setInterval(function(){
          if (framework.load_done){

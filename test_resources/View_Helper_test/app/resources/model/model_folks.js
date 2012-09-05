@@ -15,7 +15,7 @@ module.exports = function () {
             gender: Number // 1 = male, -1 = female, 0/other == ??
         });
 
-        _model =  Mongoose_Model.create(schema, {type: 'model', name: 'folks'});
+        _model =  Mongoose_Model.create(schema, {type: 'model', name: 'folks'}, mongoose);
     }
     return _model;
 }

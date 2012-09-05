@@ -1,4 +1,4 @@
-var util = require('util');
+/* var util = require('util');
 var path = require('path');
 var fs = require('fs');
 var events = require('events')
@@ -10,8 +10,10 @@ var framework;
 var request = require('request');
 var mongoose = require('mongoose');
 var app_uri = 'http://localhost:3344';
-
+*/
+// this should be done in the layout module which isn't in core anymore
 module.exports = {
+    /*
     test_setup:function (test) {
         framework = new NE.Framework({path:app_path});
         framework.start_load(function () {
@@ -67,5 +69,5 @@ module.exports = {
         mongoose.disconnect();
         test.done();
     }
-
+ */
 }

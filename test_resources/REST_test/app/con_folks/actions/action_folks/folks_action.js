@@ -37,7 +37,7 @@ module.exports = {
     post_validate:function (rs) {
         var self = this;
         delete rs.req_props.id;
-        console.log('models: %s', util.inspect(this.models));
+      //  console.log('models: %s', util.inspect(this.models));
         var trial_model = new this.models.folks.model(rs.req_props);
         trial_model.validate(function (errs) {
 
