@@ -2,3 +2,4 @@
 .DS_Store
 test_reports/Controller_loader_test/log.json
 test_reports/Resources_test/
+/test_reports/Logger_tests/log.json
