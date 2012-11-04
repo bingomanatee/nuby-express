@@ -1,6 +1,6 @@
 {
   "name": "nuby-express",
-  "version": "2.1.14",
+  "version": "2.1.15",
   "main": "index",
   "description": "A web framework based on Express, Ruby, MVC; emphasis on flexible, recursive directory loading",
   "keywords": [
