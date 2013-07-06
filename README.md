@@ -1,4 +1,4 @@
-## NOTE: Nuby Express is an early-generation version of [hive-mvc](https://github.com/bingomanatee/hive-mvc). 
+## NOTE: Nuby Express is an early-generation version of [hive-mvc](https://github.com/bingomanatee/hivemvc). 
 
 Nüby-Express is an attempt to create a framework for larger, scalable event projects. Like Ruby it is based strongly on
 convention, with a strong pattern of pathing for its resources, and a lot of support for common repeated patterns.
@@ -15,3 +15,4 @@ Some of the specific advanatages of Nüby include:
 Nüby-Express uses Express at the core to manage HTTP I/O but its own unique sets of resouces and MVC based project organization.
 
 See the Wiki for more specific details, and the test cases (via nodeunit) for many working examples.
+
